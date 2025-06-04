@@ -1,0 +1,110 @@
+body {
+    font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background-color: #f0f8ff;
+    color: #333;
+    text-align: center; /* Assicurati che questo ci sia */
+    overflow: hidden;
+}
+
+.container {
+    background-color: #fff;
+    padding: 30px 50px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    width: 90%;
+    position: relative;
+    z-index: 1;
+    display: flex; /* Aggiunto per un controllo più preciso del layout interno */
+    flex-direction: column; /* Gli elementi interni si impilano verticalmente */
+    justify-content: center; /* Centra verticalmente gli elementi interni */
+    align-items: center; /* Centra orizzontalmente gli elementi interni */
+}
+
+h1 {
+    color: #ff69b4;
+    margin-bottom: 20px;
+}
+
+p {
+    margin-bottom: 25px;
+    font-size: 1.1em;
+}
+
+button {
+    background-color: #a81010;
+    color: white;
+    /* padding: 15px 30px;  <-- Rimuoviamo il padding tradizionale per il tondo */
+    width: 80px; /* Larghezza del pulsante tondo */
+    height: 80px; /* Altezza del pulsante tondo */
+    border: none;
+    border-radius: 50%; /* Lo rende tondo! */
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Aggiunto transform per effetto al click */
+    outline: none;
+    display: flex; /* Per centrare il testo all'interno del bottone */
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0; /* Impedisce al bottone di rimpicciolirsi */
+    margin-top: 20px; /* Spazio dal contenuto sopra */
+}
+
+button:hover {
+    background-color: #960e0e; /* Rosso più scuro al passaggio del mouse */
+    transform: scale(1.05); /* Lieve ingrandimento al passaggio del mouse */
+}
+
+button:active {
+    transform: scale(0.95); /* Lieve rimpicciolimento al click */
+}
+
+.hidden {
+    display: none;
+}
+
+#message-area {
+    margin-top: 30px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    font-size: 1.2em;
+    line-height: 1.6;
+    min-height: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%; /* Occupa tutta la larghezza disponibile nel container */
+    box-sizing: border-box; /* Include padding e border nella larghezza */
+}
+
+/* Stili per il testo animato (effetto macchina da scrivere) */
+.message-text {
+    color: #333;
+    white-space: pre-wrap;
+    overflow: hidden;
+    font-family: 'Georgia', serif;
+    margin: 0 auto;
+    max-width: 90%; /* Leggermente meno del 100% per un po' di respiro */
+    animation: 
+        blinking-cursor .75s step-end infinite;
+}
+
+/* Stili per le immagini/GIF all'interno del messaggio */
+#message-area img,
+#message-area video {
+    max-width: 90%; /* Leggermente meno del 100% per un po' di respiro */
+    height: auto;
+    border-radius: 5px;
+    margin-top: 15px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
